@@ -2,6 +2,8 @@
 Nesse projeto usamos NodeJS, Prisma, Express, PostgreSQL e Docker, com esse CRUD podemos
 fazer o de sempre, criar, ler, atualizar e deletar uma tarefa.
 
+## Repo do frontend: https://github.com/AndersonD4vid/crud-todo-frontend
+
 ## Tecnologias
 - Vite + React
 - Prisma

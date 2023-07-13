@@ -16,3 +16,6 @@
 # Iniciar o Docker
 - Na raiz do projeto onde estar o arquivo do Docker, abra o cmd e rode o comando, 
 nome_do_arquivo_docker up -d . Exemplo: docker-compose up -d
+
+# Arquivo .env
+- DATABASE_URL="postgresql://admin:admin@localhost:5432"

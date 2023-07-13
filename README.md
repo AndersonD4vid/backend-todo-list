@@ -1,4 +1,4 @@
-# CRUD - To-Do List com NodeJS + Prisma + Express + PostgreSQL
+# CRUD - To-Do List com NodeJS + Prisma + Express + PostgreSQL + Docker
 
 ## Tecnologias
 - Vite + React
@@ -6,8 +6,9 @@
 - Node.Js
 - Express
 - PostgreSQL
+- Docker
 
-  [![My Skills](https://skillicons.dev/icons?i=vite,react,prisma,nodejs,express,postgresql&perline=10)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=vite,react,prisma,nodejs,express,postgresql,docker,&perline=10)](https://skillicons.dev)
 
 
 ## Dependencies

@@ -1,0 +1,21 @@
+{
+  "name": "backend-todo-list",
+  "version": "1.0.0",
+  "description": "- Express para criar o servidor \r - Nodemon é um utilitário que monitora as mudanças nos arquivos do seu projeto e reinicia automaticamente o servidor Node.Js quando necessário. Assim, você não precisa parar e iniciar o servidor manualmente a cada modificação\r - CORS, o que é CORS? Ele é essencial para garantir a navegação segura ao usuário, evitar a ação de crackers e o acesso de websites maliciosos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.0.0",
+    "@types/node": "^20.4.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1",
+    "prisma": "^5.0.0"
+  },
+  "keywords": []
+}

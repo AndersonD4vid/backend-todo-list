@@ -8,7 +8,6 @@ app.use(cors());
 app.use(todosRoutes);
 
 
-
 app.get("/teste", (req, res) => {
    return res.json("up")
 })

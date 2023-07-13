@@ -55,7 +55,7 @@ todosRoutes.delete("/todos/:id", async (req, res) => {
    const intId = parseInt(id);
 
    if (!intId) {
-      return res.status(400).json("Id is mandatory");
+      return res.status(400).json("Id é obrigatório");
    }
 
    const todoAlreadyExist = await prisma.todo.findUnique({
@@ -63,7 +63,7 @@ todosRoutes.delete("/todos/:id", async (req, res) => {
    });
 
    if (!todoAlreadyExist) {
-      return res.status(404).json("Todo not exist");
+      return res.status(404).json("To-do não existe");
    }
 
    await prisma.todo.delete({ where: { id: intId } });

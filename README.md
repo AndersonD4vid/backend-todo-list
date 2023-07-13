@@ -1,4 +1,4 @@
-# CRUD - To-Do List
+# CRUD - To-Do List com NodeJS + Prisma + Express + PostgreSQL
 
 ## Tecnologias
 - Vite + React
@@ -7,15 +7,30 @@
 - Express
 - PostgreSQL
 
+  [![My Skills](https://skillicons.dev/icons?i=vite,react,prisma,nodejs,express,postgresql&perline=10)](https://skillicons.dev)
+
 
 ## Dependencies
 - Express: Para criar o servidor 
 - Nodemon: É um utilitário que monitora as mudanças nos arquivos do seu projeto e reinicia automaticamente o servidor Node.Js quando necessário. Assim, você não precisa parar e iniciar o servidor manualmente a cada modificação
 - CORS: O que é CORS? Ele é essencial para garantir a navegação segura ao usuário, evitar a ação de crackers e o acesso de websites maliciosos.
+- Prisma (ORM): Define o modo como os dados serão mapeados entre os ambientes, como serão acessados e gravados. Isso diminui o tempo de desenvolvimento, uma vez que não é necessário desenvolver toda essa parte.
+- @prisma/client: Fazer alterações no banco de dados
+
+
+## Guia de instalação do docker no windows
+- https://docs.docker.com/desktop/install/windows-install/
+  
+## Guia de instalação do docker no Linux
+- https://docs.docker.com/engine/install/ubuntu/
 
 # Iniciar o Docker
-- Na raiz do projeto onde estar o arquivo do Docker, abra o cmd e rode o comando, 
-nome_do_arquivo_docker up -d . Exemplo: docker-compose up -d
+- Primeiro, você precisa iniciar o Docker
+- Segundo, vá para raiz do projeto, abra o CMD e rode o comando docker-compose up -d . ou o nome_do_arquivo_docker up -d
 
-# Arquivo .env
+# Criando arquivo .env 
+- Dentro da pasta raiz do projeto crie um arquivo .env e adicione a variável abaixo
 - DATABASE_URL="postgresql://admin:admin@localhost:5432"
+
+- # Iniciar o servidor
+- Yarn dev ou npm run dev

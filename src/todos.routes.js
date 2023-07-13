@@ -1,37 +1,39 @@
-const express = require('express');
+const express = require("express");
+
 const todosRoutes = express.Router();
 const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
-// Create
-todosRoutes.post("/todos", async (req, res) => {
-   const { title } = req.body;
+// C
+todosRoutes.post("/todos", async (request, response) => {
+   const { title } = request.body;
    const todo = await prisma.todo.create({
       data: {
-         title
+         title,
       },
    });
-   return res.status(201).json(todo);
-})
 
-// Read
-todosRoutes.get("/todos", async (req, res) => {
-   const todo = await prisma.todo.findMany();
-   return res.status(200).json(todo);
-})
-// Update
-todosRoutes.put("/todos", async (req, res) => {
-   const { id, title, status } = req.body;
+   return response.status(201).json(todo);
+});
+// R
+todosRoutes.get("/todos", async (request, response) => {
+   const todos = await prisma.todo.findMany();
+   return response.status(200).json(todos);
+});
+// U
+
+todosRoutes.put("/todos", async (request, response) => {
+   const { title, id, status } = request.body;
 
    if (!id) {
-      return res.status(400).json("id é obrigatório")
+      return response.status(400).json("Id is mandatory");
    }
 
    const todoAlreadyExist = await prisma.todo.findUnique({ where: { id } });
 
    if (!todoAlreadyExist) {
-      return res.status(404).json("To-Do não existe")
+      return response.status(404).json("Todo not exist");
    }
 
    const todo = await prisma.todo.update({
@@ -41,32 +43,32 @@ todosRoutes.put("/todos", async (req, res) => {
       data: {
          title,
          status,
-      }
+      },
    });
-   return res.status(200).json(todo);
+
+   return response.status(200).json(todo);
 });
-
-// Delete
-
-todosRoutes.delete("/todos/:id", async (req, res) => {
-   const { id } = req.params;
+// D
+todosRoutes.delete("/todos/:id", async (request, response) => {
+   const { id } = request.params;
 
    const intId = parseInt(id);
 
    if (!intId) {
-      return res.status(400).json("id é obrigatório")
+      return response.status(400).json("Id is mandatory");
    }
 
-   const todoAlreadyExist = await prisma.todo.findUnique({ where: { id: intId } });
+   const todoAlreadyExist = await prisma.todo.findUnique({
+      where: { id: intId },
+   });
 
    if (!todoAlreadyExist) {
-      return res.status(404).send("To-Do deletado");
+      return response.status(404).json("Todo not exist");
    }
 
-   await prisma.todo.delete({
-      where: { id: intId }
-   });
-});
+   await prisma.todo.delete({ where: { id: intId } });
 
+   return response.status(200).send();
+});
 
 module.exports = todosRoutes;
